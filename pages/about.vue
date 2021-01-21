@@ -166,7 +166,7 @@ const logger = debug('portfolio')
   // }
   async asyncData({ app, res, store, $axios }: { app: any, res: any, store: Store<any>, $axios: any}) {
     try {
-      logger(res.locals)
+      logger('Hey this is a log')
       $axios.setHeader('Content-Type', 'application/json')
       $axios.setHeader('x-api-key', process.env.APPSYNC_API_KEY)
       const cards = (await $axios.$post('https://iwp2lauwg5e3dlespaft2ebjpq.appsync-api.us-west-2.amazonaws.com/graphql', {
