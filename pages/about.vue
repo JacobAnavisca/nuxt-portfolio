@@ -140,33 +140,9 @@ const logger = debug('portfolio')
 @Component({
   components: {
   },
-  // async fetch () {
-  //   const dbResponse = await fetch('https://iwp2lauwg5e3dlespaft2ebjpq.appsync-api.us-west-2.amazonaws.com/graphql', {
-  //     method: 'POST', // *GET, POST, PUT, DELETE, etc.
-  //     mode: 'cors', // no-cors, *cors, same-origin
-  //     cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-  //     credentials: 'same-origin', // include, *same-origin, omit
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       'x-api-key': 'da2-p2cwzfbrxna6zpfwrryraoyzfi'
-  //       // 'Content-Type': 'application/x-www-form-urlencoded',
-  //     },
-  //     redirect: 'follow', // manual, *follow, error
-  //     referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-  //     body: JSON.stringify({
-  //       query: "query listAboutards {\n  listAboutCards {\n    items {\n      id\n      title\n      src\n      content\n      contentType\n      subtitle\n      width\n      height\n    }\n  }\n}\n",
-  //       variables: {}
-  //     }) // body data type must match "Content-Type" header
-  //   })
-  //   logger(dbResponse)
-  //   const CardsModuleInstance = getModule(CardsModule, this.$store)
-  //   const cards = await CardsModuleInstance.about
-  //   this.cards = cards
-  //   this.card = cards?.[0]
-  // }
   async asyncData({ app, res, store, $axios }: { app: any, res: any, store: Store<any>, $axios: any}) {
     try {
-      logger('Hey this is a log')
+      app.$logger('Hey this is a log')
       $axios.setHeader('Content-Type', 'application/json')
       $axios.setHeader('x-api-key', process.env.APPSYNC_API_KEY)
       const cards = (await $axios.$post('https://iwp2lauwg5e3dlespaft2ebjpq.appsync-api.us-west-2.amazonaws.com/graphql', {
@@ -205,7 +181,7 @@ const logger = debug('portfolio')
       // logger(card)
       // return { cards, card }
     } catch(error) {
-      logger(error)
+      app.$logger(error)
     }
   }
 })

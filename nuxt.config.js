@@ -1,3 +1,6 @@
+import { format, transports } from 'winston'
+const { combine, timestamp, label, prettyPrint } = format
+
 module.exports = {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -34,7 +37,8 @@ module.exports = {
     '@nuxtjs/vuetify',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    'nuxt-winston-log'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -81,5 +85,17 @@ module.exports = {
     }
   },
 
-  plugins: ['~/plugins/logger.ts']
+  plugins: ['~/plugins/logger.ts'],
+
+  winstonLog: {
+    useDefaultLogger: false,
+    loggerOptions: {
+      format: combine(
+        label({ label: 'Custom Nuxt logging!' }),
+        timestamp(),
+        prettyPrint()
+      ),
+      transports: [new transports.Console()]
+    }
+  }
 }
