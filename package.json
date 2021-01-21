@@ -2,7 +2,7 @@
   "name": "nuxt-portfolio",
   "version": "1.0.0",
   "engines": {
-    "node": "15.x"
+    "node": "14.x"
   },
   "private": true,
   "scripts": {
