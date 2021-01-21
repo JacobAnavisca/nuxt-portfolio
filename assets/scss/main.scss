@@ -1,0 +1,39 @@
+// /styles/_main.scss
+$primary: #e26610;
+$secondary: #db9501;
+$accent: #6e6702;
+$background: #3e5258;
+$popAccent: #7b8dee;
+$mainFont: 'Eva-Peron';
+
+@font-face {
+  font-family: 'Eva-Peron';
+  src: url("https://jla-portfolio-assets.s3-us-west-2.amazonaws.com/fonts/EVA-Peron.woff2") format('woff2'),
+    url("https://jla-portfolio-assets.s3-us-west-2.amazonaws.com/fonts/EVA-Peron.woff") format('woff'),
+    url("https://jla-portfolio-assets.s3-us-west-2.amazonaws.com/fonts/EVA-Peron.eot") format('embedded-opentype'),
+    url("https://jla-portfolio-assets.s3-us-west-2.amazonaws.com/fonts/EVA-Peron.eot?#iefix") format('embedded-opentype');
+}
+
+@font-face {
+  font-family: 'Eva-Duarte';
+  src: url("https://jla-portfolio-assets.s3-us-west-2.amazonaws.com/fonts/EVA-Duarte.woff2") format('woff2'),
+    url("https://jla-portfolio-assets.s3-us-west-2.amazonaws.com/fonts/EVA-Duarte.woff") format('woff'),
+    url("https://jla-portfolio-assets.s3-us-west-2.amazonaws.com/fonts/EVA-Duarte.eot") format('embedded-opentype'),
+    url("https://jla-portfolio-assets.s3-us-west-2.amazonaws.com/fonts/EVA-Duarte.eot?#iefix") format('embedded-opentype');
+}
+
+@font-face {
+  font-family: 'Eva-Maria';
+  src: url("https://jla-portfolio-assets.s3-us-west-2.amazonaws.com/fonts/EVA-Maria.woff2") format('woff2'),
+    url("https://jla-portfolio-assets.s3-us-west-2.amazonaws.com/fonts/EVA-Maria.woff") format('woff'),
+    url("https://jla-portfolio-assets.s3-us-west-2.amazonaws.com/fonts/EVA-Maria.eot") format('embedded-opentype'),
+    url("https://jla-portfolio-assets.s3-us-west-2.amazonaws.com/fonts/EVA-Maria.eot?#iefix") format('embedded-opentype');
+}
+
+@font-face {
+  font-family: 'Ruben';
+  src: url("https://jla-portfolio-assets.s3-us-west-2.amazonaws.com/fonts/RUBEN-Regular.woff2") format('woff2'),
+    url("https://jla-portfolio-assets.s3-us-west-2.amazonaws.com/fonts/RUBEN-Regular.woff") format('woff'),
+    url("https://jla-portfolio-assets.s3-us-west-2.amazonaws.com/fonts/RUBEN-Regular.eot") format('embedded-opentype'),
+    url("https://jla-portfolio-assets.s3-us-west-2.amazonaws.com/fonts/RUBEN-Regular.eot?#iefix") format('embedded-opentype');
+}
