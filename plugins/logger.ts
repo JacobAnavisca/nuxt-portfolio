@@ -1,32 +1,37 @@
 import { Plugin } from '@nuxt/types'
 import debug from 'debug'
 
-const debugLog = debug('PORTFOLIO')
+export interface Log {
+  info: (message: string) => void, error: (message: string) => void
+}
 
 declare module 'vue/types/vue' {
   interface Vue {
-    $logger(message: string): void
+    $log: Log
   }
 }
 
 declare module '@nuxt/types' {
   interface NuxtAppOptions {
-    $logger(message: string): void
+    $log: Log
   }
 
   interface Context {
-    $logger(message: string): void
+    $log: Log
   }
 }
 
 declare module 'vuex/types/index' {
   interface Store<S> {
-    $logger(message: string): void
+    $log: Log
   }
 }
 
 const logger: Plugin = (context, inject) => {
-  inject('logger', (message: string) => debugLog(message))
+  inject('log', {
+    info: (message: string) => debug('PORTFOLIO::DEBUG')(message),
+    error: (message: string) => debug('PORTFOLIO::ERROR')(message)
+  })
 }
 
 export default logger

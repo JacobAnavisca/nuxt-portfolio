@@ -1,6 +1,7 @@
 export type SkillsItem = {
+  id?: string,
   title: string,
-  category: string | string[]
+  categories: string[]
 }
 
 type ContentCard = {
@@ -20,4 +21,8 @@ export type AboutCard = ContentCard & {
 export type WorkCard = ContentCard & {
   description?: string,
   link?: string
+}
+
+export interface RootState {
+    version: string
 }

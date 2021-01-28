@@ -1,6 +1,5 @@
 <template>
   <v-app>
-    <!-- <v-system-bar></v-system-bar> -->
 
     <v-navigation-drawer
       :app="$vuetify.breakpoint.mdAndDown ? false: true"
@@ -8,6 +7,8 @@
       mini-variant
       class="primary hidden-md-and-down"
     >
+      <v-list>
+      </v-list>
       <v-list
         nav
         rounded
@@ -15,46 +16,88 @@
       >
         <v-list-item-group>
           <v-list-item link>
-            <router-link to="/">
+            <NuxtLink to="/">
             <v-list-item-icon>
               <v-icon>mdi-home</v-icon>
             </v-list-item-icon>
-            </router-link>
+            </NuxtLink>
           </v-list-item>
 
           <v-list-item link>
-            <router-link to="/about">
+            <NuxtLink to="/about">
               <v-list-item-icon>
                 <v-icon>mdi-coffee</v-icon>
               </v-list-item-icon>
-            </router-link>
+            </NuxtLink>
           </v-list-item>
 
           <v-list-item>
-            <router-link to="/skills">
+            <NuxtLink to="/skills">
               <v-list-item-icon>
                 <v-icon>mdi-sword</v-icon>
               </v-list-item-icon>
-            </router-link>
+            </NuxtLink>
           </v-list-item>
 
           <v-list-item>
-            <router-link to="/work">
+            <NuxtLink to="/work">
               <v-list-item-icon>
                 <v-icon>mdi-code-json</v-icon>
               </v-list-item-icon>
-            </router-link>
+            </NuxtLink>
           </v-list-item>
 
           <v-list-item>
-            <router-link to="/contact">
+            <NuxtLink to="/contact">
               <v-list-item-icon>
                 <v-icon>mdi-email</v-icon>
               </v-list-item-icon>
-            </router-link>
+            </NuxtLink>
           </v-list-item>
         </v-list-item-group>
       </v-list>
+
+      <template v-slot:append>
+        <v-list
+          nav
+          rounded
+          dense
+        >
+          <v-list-item-group>
+            <v-list-item>
+              <a href="https://github.com/JacobAnavisca">
+                <v-list-item-icon>
+                  <v-icon>mdi-github</v-icon>
+                </v-list-item-icon>
+              </a>
+            </v-list-item>
+
+            <v-list-item>
+              <a href="https://t.me/Calcifer_Howl">
+                <v-list-item-icon>
+                  <v-icon>mdi-telegram</v-icon>
+                </v-list-item-icon>
+              </a>
+            </v-list-item>
+
+            <v-list-item>
+              <a @click="copyDiscordUsr">
+                <v-list-item-icon>
+                  <v-icon>mdi-discord</v-icon>
+                </v-list-item-icon>
+              </a>
+            </v-list-item>
+
+            <v-list-item>
+              <a href="https://www.linkedin.com/in/jacob-anavisca/">
+                <v-list-item-icon>
+                  <v-icon>mdi-linkedin</v-icon>
+                </v-list-item-icon>
+              </a>
+            </v-list-item>
+          </v-list-item-group>
+        </v-list>
+      </template>
     </v-navigation-drawer>
 
     <v-bottom-navigation
@@ -106,6 +149,41 @@
     </v-bottom-navigation>
 
     <v-main class="background">
+      <v-alert
+        v-model="successAlert"
+        dismissible
+        type="success"
+        border="left"
+        dense
+        text
+        elevation="2"
+      >
+        You've copied my Discord username <strong>{{ this.discordUsr }}</strong>!
+      </v-alert>
+      <v-alert
+        v-model="errorAlert"
+        dismissible
+        type="error"
+        border="left"
+        dense
+        text
+        elevation="2"
+      >
+        There was an issue copying my Discord username 😞Check the console for more info.
+      </v-alert>
+      <v-btn
+        class="hidden-lg-and-up"
+        v-show="this.$route.path !== '/contact'"
+        fab
+        color="secondary"
+        top
+        right
+        fixed
+        nuxt
+        to="/contact"
+      >
+        <v-icon>mdi-email</v-icon>
+      </v-btn>
       <v-container fluid>
         <nuxt />
       </v-container>
@@ -115,13 +193,46 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { mainStore } from '~/store'
 
 export default Vue.extend({
   name: 'App',
 
   data: () => ({
-    drawer: false
-  })
+    drawer: false,
+    discordUsr: 'Howl.Calcifer#3602',
+    showContactButton: false
+  }),
+  computed: {
+    successAlert: {
+      get: function () {
+        return mainStore.showSuccessAlert
+      },
+      set: function () {
+        return mainStore.setSuccessAlert(false)
+      }
+    },
+    errorAlert: {
+      get: function () {
+        return mainStore.showErrorAlert
+      },
+      set: function () {
+        return mainStore.setErrorAlert(false)
+      }
+    }
+  },
+  methods: {
+    copyDiscordUsr: async function () {
+      try {
+        await navigator.clipboard.writeText(this.discordUsr)
+        mainStore.setSuccessAlert(true)
+        this.$log.info(`Copied discord username: ${this.discordUsr}`)
+      } catch (err) {
+        mainStore.setErrorAlert(true)
+        this.$log.error(err)
+      }
+    }
+  }
 })
 </script>
 
@@ -131,6 +242,6 @@ export default Vue.extend({
 }
 
 .v-navigation-drawer .v-list {
-  margin-top: 33vh;
+  height: 33%;
 }
 </style>
