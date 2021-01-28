@@ -34,8 +34,7 @@ module.exports = {
     '@nuxtjs/vuetify',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
-    '@nuxtjs/axios',
-    '@nuxt/http'
+    '@nuxtjs/axios'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
