@@ -1,6 +1,6 @@
 import { Middleware } from '@nuxt/types'
 
-const browserDebug: Middleware = (context) => {
+const browserDebug: Middleware = () => { // context
   // Do not run on server
   if (process.server) {
     return

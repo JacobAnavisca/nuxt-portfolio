@@ -1,8 +1,9 @@
+/* eslint-disable no-unused-expressions */
 import { Plugin } from '@nuxt/types'
 import { initializeAxios, initializeLog } from '~/utils/pluginsInitializer'
 
 const accessor: Plugin = ({ $axios, $log }) => {
-  initializeAxios($axios),
+  initializeAxios($axios)
   initializeLog($log)
 }
 

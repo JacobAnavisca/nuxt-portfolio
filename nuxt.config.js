@@ -90,5 +90,13 @@ module.exports = {
 
   router: {
     middleware: 'browserDebug'
+  },
+
+  typescript: {
+    typeCheck: {
+      eslint: {
+        files: './**/*.{ts,js,vue}'
+      }
+    }
   }
 }

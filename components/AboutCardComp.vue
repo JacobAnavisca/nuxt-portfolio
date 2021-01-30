@@ -8,9 +8,9 @@
     <v-list-item two-line>
       <v-list-item-content>
         <v-list-item-title class="headline">
-          {{ this.card.title }}
+          {{ card.title }}
         </v-list-item-title>
-        <v-list-item-subtitle>{{ this.card.subtitle }}</v-list-item-subtitle>
+        <v-list-item-subtitle>{{ card.subtitle }}</v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item>
     <div
@@ -24,10 +24,10 @@
         :width="card.width"
         class="rounded-lg"
       >
-      <source
-        :src="card.src"
-        type="video/mp4"
-      >
+        <source
+          :src="card.src"
+          type="video/mp4"
+        >
       </video>
       <br>
     </div>

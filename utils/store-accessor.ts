@@ -1,3 +1,4 @@
+/* eslint-disable import/no-mutable-exports */
 import { Store } from 'vuex'
 import { getModule } from 'vuex-module-decorators'
 import SkillStore from '~/store/modules/SkillsStoreModule'
@@ -10,7 +11,7 @@ let workStore: WorkStore
 let aboutStore: AboutStore
 let mainStore: MainStore
 
-function initialiseStores(store: Store<any>): void {
+function initialiseStores (store: Store<any>): void {
   skillStore = getModule(SkillStore, store)
   workStore = getModule(WorkStore, store)
   aboutStore = getModule(AboutStore, store)

@@ -8,8 +8,8 @@
           cols="12"
         >
           <h1
-            class="text-left"
             id="name"
+            class="text-left"
           >
             Skills
           </h1>
@@ -35,8 +35,8 @@
           cols="12"
         >
           <SkillCardComp
-            :selectedCategories="this.selectedCategories"
-            :skillItems="this.skillItems"
+            :selected-categories="selectedCategories"
+            :skill-items="skillItems"
           />
         </v-col>
       </v-row>
@@ -62,8 +62,8 @@ export default class Skills extends Vue {
 
   skillItems: SkillsItem[] = []
 
-  mounted() {
-      this.skillItems = skillStore.skillItems
+  mounted () {
+    this.skillItems = skillStore.skillItems
   }
 }
 </script>

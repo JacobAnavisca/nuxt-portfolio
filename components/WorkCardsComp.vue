@@ -17,9 +17,9 @@
           class="white--text align-end"
           height="200px"
         />
-        <v-card-title v-text="card.title"></v-card-title>
+        <v-card-title v-text="card.title" />
         <v-card-text>
-          {{card.description}}
+          {{ card.description }}
         </v-card-text>
       </v-card>
     </v-col>
@@ -27,7 +27,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Emit } from 'vue-property-decorator'
+import { Component, Vue, Prop } from 'vue-property-decorator'
 import { WorkCard } from '@/types'
 
 @Component
