@@ -76,7 +76,6 @@ dist
 
 # Serverless directories
 .serverless
-serverless.yml
 
 # IDE / Editor
 .idea
