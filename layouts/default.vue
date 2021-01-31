@@ -220,7 +220,7 @@ export default Vue.extend({
     }
   },
   methods: {
-    copyDiscordUsr: async () => {
+    async copyDiscordUsr () {
       try {
         await navigator.clipboard.writeText(this.discordUsr)
         mainStore.setSuccessAlert(true)
