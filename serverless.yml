@@ -36,6 +36,7 @@ functions:
 package:
   include:
     - .nuxt/**
+    - node_modules/tslib/**
 
 custom:
   domainName:
