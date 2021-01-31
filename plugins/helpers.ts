@@ -22,7 +22,7 @@ declare module 'vuex/types/index' {
   }
 }
 
-const logger: Plugin = ({$vuetify}, inject) => {
+const logger: Plugin = ({ $vuetify }, inject) => {
   inject('contentTopMargin', (): number => {
     const margin = $vuetify.breakpoint.mdAndDown
       ? 0

@@ -8,8 +8,8 @@
           cols="12"
         >
           <h1
-            class="text-left"
             id="name"
+            class="text-left"
           >
             About Me
           </h1>
@@ -21,32 +21,38 @@
             my toes into programming, it's like a never ending puzzle. I try to help out with
             open source projects when I can and I love learning new tools and new programming
             languages.
-          <br><br>
+            <br><br>
             <v-btn
-              @mouseover="updateCard('hiking')"
               class="card-hover"
               color="popAccent"
               elevation="9"
               small
-            >Hiking</v-btn>
+              @mouseover="updateCard('hiking')"
+            >
+              Hiking
+            </v-btn>
             is one of my favorite things to do. No feeling beats the feeling of a cloud
             rolling through you at the top of a mountain. I enjoy
             <v-btn
-              @mouseover="updateCard('drawing')"
               class="card-hover"
               color="popAccent"
               elevation="9"
               small
-            >drawing</v-btn>
+              @mouseover="updateCard('drawing')"
+            >
+              drawing
+            </v-btn>
             and have enjoyed it since I was a kid making doodles. I love going to punk shows,
             love the smaller venues near Boston, and I enjoy playing
             <v-btn
-              @mouseover="updateCard('guitar')"
               class="card-hover"
               color="popAccent"
               elevation="9"
               small
-            >guitar</v-btn>
+              @mouseover="updateCard('guitar')"
+            >
+              guitar
+            </v-btn>
           </p>
         </v-col>
         <v-col
@@ -54,7 +60,7 @@
           xl="5"
           cols="12"
         >
-          <AboutCardComp :card="this.card" />
+          <AboutCardComp :card="card" />
         </v-col>
       </v-row>
     </FluidMarginContainer>
@@ -85,9 +91,9 @@ export default class About extends Vue {
     this.card = newCard
   }
 
-  mounted() {
-      this.cards = aboutStore.aboutCards
-      this.card = aboutStore.aboutCards.find(card => card.content === 'hiking')
+  mounted () {
+    this.cards = aboutStore.aboutCards
+    this.card = aboutStore.aboutCards.find(card => card.content === 'hiking')
   }
 }
 </script>

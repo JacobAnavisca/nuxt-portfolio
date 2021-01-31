@@ -16,7 +16,7 @@ const app = express()
 const nuxt = new Nuxt({
   ...config,
   dev: false,
-  _start: true,
+  _start: true
 })
 
 // app.use(async (req, res, next) => {
@@ -50,6 +50,7 @@ app.use(async (req, res) => {
   }
   nuxt.render(req, res)
 })
+// eslint-disable-next-line no-void
 const server = createServer(app, void 0, [
   'application/javascript',
   'application/json',
@@ -72,7 +73,7 @@ const server = createServer(app, void 0, [
   'text/text',
   'text/xml',
   'application/rss+xml',
-  'application/atom+xml',
+  'application/atom+xml'
 ])
 
 module.exports.handler = (event, ctx) => {

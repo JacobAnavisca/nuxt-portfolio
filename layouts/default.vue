@@ -1,14 +1,12 @@
 <template>
   <v-app>
-
     <v-navigation-drawer
       :app="$vuetify.breakpoint.mdAndDown ? false: true"
       permanent
       mini-variant
       class="primary hidden-md-and-down"
     >
-      <v-list>
-      </v-list>
+      <v-list />
       <v-list
         nav
         rounded
@@ -17,9 +15,9 @@
         <v-list-item-group>
           <v-list-item link>
             <NuxtLink to="/">
-            <v-list-item-icon>
-              <v-icon>mdi-home</v-icon>
-            </v-list-item-icon>
+              <v-list-item-icon>
+                <v-icon>mdi-home</v-icon>
+              </v-list-item-icon>
             </NuxtLink>
           </v-list-item>
 
@@ -57,7 +55,7 @@
         </v-list-item-group>
       </v-list>
 
-      <template v-slot:append>
+      <template #append>
         <v-list
           nav
           rounded
@@ -158,7 +156,7 @@
         text
         elevation="2"
       >
-        You've copied my Discord username <strong>{{ this.discordUsr }}</strong>!
+        You've copied my Discord username <strong>{{ discordUsr }}</strong>!
       </v-alert>
       <v-alert
         v-model="errorAlert"
@@ -172,8 +170,8 @@
         There was an issue copying my Discord username 😞Check the console for more info.
       </v-alert>
       <v-btn
-        class="hidden-lg-and-up"
         v-show="this.$route.path !== '/contact'"
+        class="hidden-lg-and-up"
         fab
         color="secondary"
         top
@@ -205,24 +203,24 @@ export default Vue.extend({
   }),
   computed: {
     successAlert: {
-      get: function () {
+      get: () => {
         return mainStore.showSuccessAlert
       },
-      set: function () {
+      set: () => {
         return mainStore.setSuccessAlert(false)
       }
     },
     errorAlert: {
-      get: function () {
+      get: () => {
         return mainStore.showErrorAlert
       },
-      set: function () {
+      set: () => {
         return mainStore.setErrorAlert(false)
       }
     }
   },
   methods: {
-    copyDiscordUsr: async function () {
+    async copyDiscordUsr () {
       try {
         await navigator.clipboard.writeText(this.discordUsr)
         mainStore.setSuccessAlert(true)

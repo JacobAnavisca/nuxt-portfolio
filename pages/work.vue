@@ -1,7 +1,7 @@
 <template>
   <div class="work">
-    <FluidMarginContainer :topMargin="false">
-      <WorkCardsComp :workCards="this.workCards" />
+    <FluidMarginContainer :top-margin="false">
+      <WorkCardsComp :work-cards="workCards" />
     </FluidMarginContainer>
   </div>
 </template>
@@ -22,8 +22,8 @@ import { workStore } from '~/store'
 export default class Work extends Vue {
   workCards: WorkCard[] = []
 
-  mounted() {
-      this.workCards = workStore.workCards
+  mounted () {
+    this.workCards = workStore.workCards
   }
 }
 </script>

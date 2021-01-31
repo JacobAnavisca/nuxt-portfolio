@@ -27,7 +27,7 @@ declare module 'vuex/types/index' {
   }
 }
 
-const logger: Plugin = (context, inject) => {
+const logger: Plugin = (_context, inject) => {
   inject('log', {
     info: (message: string) => debug('PORTFOLIO::DEBUG')(message),
     error: (message: string) => debug('PORTFOLIO::ERROR')(message)

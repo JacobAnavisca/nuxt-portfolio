@@ -9,7 +9,7 @@
       text
       elevation="2"
     >
-      You've copied my Discord username <strong>{{ this.discordUsr }}</strong>!
+      You've copied my Discord username <strong>{{ discordUsr }}</strong>!
     </v-alert>
     <v-alert
       v-model="errorAlert"
@@ -53,7 +53,9 @@
               rounded
               x-large
               color="popAccent"
-            ><v-icon>mdi-email</v-icon>&nbsp;Say Hello!</v-btn>
+            >
+              <v-icon>mdi-email</v-icon>&nbsp;Say Hello!
+            </v-btn>
 
             <br><br>
 
@@ -64,21 +66,21 @@
                 href="https://github.com/JacobAnavisca"
                 icon
               >
-                  <v-icon>mdi-github</v-icon>
+                <v-icon>mdi-github</v-icon>
               </v-btn>
 
               <v-btn
                 href="https://t.me/Calcifer_Howl"
                 icon
               >
-                  <v-icon>mdi-telegram</v-icon>
+                <v-icon>mdi-telegram</v-icon>
               </v-btn>
 
               <v-btn
-                @click="copyDiscordUsr"
                 icon
+                @click="copyDiscordUsr"
               >
-                  <v-icon>mdi-discord</v-icon>
+                <v-icon>mdi-discord</v-icon>
               </v-btn>
 
               <v-btn
@@ -110,10 +112,10 @@ export default class Contact extends Vue {
 
   successAlert: boolean = false
 
-  errorAlert: boolean =  false
+  errorAlert: boolean = false
 
   @Emit()
-  async copyDiscordUsr() {
+  async copyDiscordUsr () {
     try {
       await navigator.clipboard.writeText(this.discordUsr)
       mainStore.setSuccessAlert(true)

@@ -33,6 +33,11 @@ functions:
       - http: ANY /
       - http: ANY /{proxy+}
 
+package:
+  include:
+    - .nuxt/**
+    - node_modules/tslib/**
+
 custom:
   domainName:
     dev: beta.jacobanavisca.com
