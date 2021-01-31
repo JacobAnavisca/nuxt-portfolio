@@ -33,6 +33,10 @@ functions:
       - http: ANY /
       - http: ANY /{proxy+}
 
+package:
+  include:
+    - .nuxt/**
+
 custom:
   domainName:
     dev: beta.jacobanavisca.com
