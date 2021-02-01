@@ -16,7 +16,7 @@
     "sls": "./node_modules/.bin/serverless"
   },
   "dependencies": {
-    "@nuxt/typescript-runtime": "^2.0.0",
+    "@nuxt/typescript-runtime": "^2.0.1",
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/style-resources": "^1.0.0",
