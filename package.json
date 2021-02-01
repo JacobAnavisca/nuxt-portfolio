@@ -21,7 +21,7 @@
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/style-resources": "^1.0.0",
     "aws-serverless-express": "^3.4.0",
-    "core-js": "^3.6.5",
+    "core-js": "^3.8.3",
     "debug": "^4.3.1",
     "express": "^4.17.1",
     "nuxt-start": "^2.14.12",
