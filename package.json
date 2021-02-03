@@ -49,12 +49,12 @@
     "jest": "^26.5.0",
     "node-sass": "^5.0.0",
     "nuxt": "^2.14.10",
-    "sass": "^1.30.0",
+    "sass": "^1.32.6",
     "sass-loader": "^8.0.2",
     "serverless": "^2.21.1",
     "serverless-dotenv-plugin": "^3.1.0",
     "serverless-offline": "^6.8.0",
-    "ts-jest": "^26.4.1",
+    "ts-jest": "^26.5.0",
     "vue-jest": "^3.0.4",
     "vuetify-loader": "^1.6.0"
   }
