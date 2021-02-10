@@ -1,5 +1,5 @@
 module.exports = {
-  // Global page headers (https://go.nuxtjs.dev/config-head)
+  // Global page headers ()
   head: {
     titleTemplate: '%s - portfolio',
     title: 'portfolio',
@@ -10,6 +10,9 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      { src: 'https://jla-portfolio-assets.s3-us-west-2.amazonaws.com/scripts/matomotracker.js' }
     ]
   },
 
@@ -79,6 +82,12 @@ module.exports = {
   pwa: {
     icon: {
       source: './static/icon.png'
+    },
+    meta: {
+      name: 'JLA Portfolio'
+    },
+    manifest: {
+      name: 'JLA Portfolio'
     }
   },
 
