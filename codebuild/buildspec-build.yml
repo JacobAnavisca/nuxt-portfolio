@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14.x
+    commands:
+      - npm install -g npm@latest
+      - npm ci
+  pre_build:
+    commands:
+      - npm run lint
+      # TODO: uncomment if there are integration or unit tests to run
+      # - npm test
+      - npm run sls -- deploy --stage $sls_stage --noDeploy
+  build:
+    commands:
+      - npm run build
+  post_build:
+    commands:
+      - cat ./.serverless/serverless-state.json
