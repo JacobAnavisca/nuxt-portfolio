@@ -12,7 +12,12 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      { src: 'https://jla-portfolio-assets.s3-us-west-2.amazonaws.com/scripts/matomotracker.js' }
+      {
+        async: true,
+        defer: true,
+        'data-website-id': '7f2ff2ed-6bb4-47bd-bb77-5e7b271d8275',
+        src: 'https://shielded-ravine-69983.herokuapp.com/umami.js'
+      }
     ]
   },
 
