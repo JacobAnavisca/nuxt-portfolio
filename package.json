@@ -54,7 +54,7 @@
     "serverless": "^2.21.1",
     "serverless-dotenv-plugin": "^3.1.0",
     "serverless-offline": "^6.8.0",
-    "ts-jest": "^26.4.1",
+    "ts-jest": "^26.5.5",
     "vue-jest": "^3.0.4",
     "vuetify-loader": "^1.6.0"
   }
