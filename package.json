@@ -50,7 +50,7 @@
     "node-sass": "^5.0.0",
     "nuxt": "^2.14.10",
     "sass": "^1.32.6",
-    "sass-loader": "^8.0.2",
+    "sass-loader": "^12.6.0",
     "serverless": "^2.21.1",
     "serverless-dotenv-plugin": "^3.1.0",
     "serverless-offline": "^6.8.0",
