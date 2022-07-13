@@ -56,6 +56,6 @@
     "serverless-offline": "^6.8.0",
     "ts-jest": "^26.4.1",
     "vue-jest": "^3.0.4",
-    "vuetify-loader": "^1.6.0"
+    "vuetify-loader": "^1.9.1"
   }
 }
